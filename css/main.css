@@ -5,16 +5,26 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+.document-title {
+  text-align: center;
+  font-size: 2.5em; /* Slightly larger for prominence */
+  font-weight: 700;
+  margin-bottom: 30px;
   color: #333;
-  background-color: #f5f5f7;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  max-width: 1200px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f5f5f7; /* Apple-inspired light grey */
+  line-height: 1.5; /* Slightly increased for better readability */
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding-top: 0;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Header */
@@ -38,11 +48,52 @@ header p {
 }
 
 /* Navigation Menu */
+
+nav {
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 5px 5px; /* Reduced padding to make the navigation bar more compact */
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+nav p {
+  font-size: 1rem;
+  color: #6e6e73;
+}
+
+/* Default hyperlink styles */
+nav p a {
+  color: #007aff; /* Apple-inspired blue color for links */
+  text-decoration: none; /* Remove the underline for a cleaner look */
+  font-weight: 500; /* Slightly bold for better visibility */
+  transition: color 0.3s ease; /* Smooth transition effect when hovering */
+}
+
+/* Hyperlink hover styles */
+nav p a:hover {
+  color: #005bb5; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+/* Hyperlink visited styles */
+nav p a:visited {
+  color: #5e5ce6; /* Softer purple for visited links */
+}
+
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 nav ul li {
@@ -53,7 +104,7 @@ nav ul li a {
   text-decoration: none;
   color: #0071e3;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
@@ -63,13 +114,22 @@ nav ul li a:hover {
 
 /* Article Styles */
 section {
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 
 article {
   margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e0e0e0;
+}
+
+article h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 article h2 {
@@ -87,37 +147,72 @@ article h2 a {
 }
 
 article h2 a:hover {
-  color: #0071e3; /* Apple-inspired blue for hover */
+  color: #0071e3;
+  /* Apple-inspired blue for hover */
 }
 
 article p {
-  font-size: 1.1rem;
-  color: #555; /* Subtle text color */
-  margin-bottom: 15px;
-  line-height: 1.7;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px; /* Added padding between paragraphs */
+  line-height: 1.6; /* Slightly increased for an airy, elegant feel */
+  padding: 5px 0; /* Space between paragraph and the top/bottom */
 }
 
 article p em {
-  color: #6e6e73; /* Muted color for emphasis */
+  color: #6e6e73;
   font-size: 1rem;
   font-style: italic;
 }
 
-ul {
-  list-style: disc inside;  /* Inside ensures the bullet is aligned with the text */
-  padding-left: 20px;       /* Indent to align with content */
+/* Default hyperlink styles */
+article a {
+  color: #007aff; /* Apple-inspired blue color for links */
+  text-decoration: none; /* Remove the underline for a cleaner look */
+  font-weight: 500; /* Slightly bold for better visibility */
+  transition: color 0.3s ease; /* Smooth transition effect when hovering */
 }
 
-ul li {
+/* Hyperlink hover styles */
+article a:hover {
+  color: #005bb5; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+/* Hyperlink visited styles */
+article a:visited {
+  color: #5e5ce6; /* Softer purple for visited links */
+}
+
+/* Add padding at the bottom of all headings */
+article h1,
+h2,
+h3,
+h4,
+h5,
+h3 {
+  margin-bottom: 16px; /* Adjust the value to your needs */
+}
+
+/* Ensure consistent font size for lists */
+ul, ol {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 20px; /* Indent the entire list */
+  padding: 0;
+  color: #555;
+}
+
+/* Add padding to the bottom of the last list item */
+ul li:last-child, ol li:last-child {
   margin-bottom: 15px;
 }
 
-ul li a {
-  font-size: 1.2rem;
-  color: #0071e3;            /* Apple-inspired blue */
-  text-decoration: none;
-  font-weight: 500;
+/* Add padding between list items */
+ul li, ol li {
+  margin-bottom: 10px;
 }
+
 
 ul li a:hover {
   text-decoration: underline;
@@ -128,7 +223,7 @@ section img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 20px auto;
+  margin: 30px auto; /* Increased margin for better spacing */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
